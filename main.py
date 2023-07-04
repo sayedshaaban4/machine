@@ -7,6 +7,16 @@ import cv2 , dlib , numpy as np
 
 app = Flask(__name__)
 
+# home route
+@app.route('/' , Method = ["GET"])
+def home():
+    try:
+        if request.method == "GET":
+            return jsonify({'msg': 'HELLO from flask'})
+    except Exception as e:
+        return jsonify({'msg': str(e)})
+
+
 # Distraction route
 @app.route('/api/driver/distraction-pre-processing', methods=["POST"])
 def distractionPreProcessing():
