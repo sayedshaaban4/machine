@@ -8,7 +8,7 @@ import cv2 , dlib , numpy as np
 app = Flask(__name__)
 
 # home route
-@app.route('/' , Method = ["GET"])
+@app.route('/' , methods = ["GET"])
 def home():
     try:
         if request.method == "GET":
